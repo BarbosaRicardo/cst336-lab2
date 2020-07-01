@@ -56,10 +56,6 @@ in html
               }
               return isValid;
            }
-
-
-           
-
            function rightAnswer(index){
               $(`#q${index}Feedback`).html("Correct!");
               $(`#q${index}Feedback`).attr("class", "bg-success text-white");
@@ -123,19 +119,27 @@ in html
               $("#totalScore").html(`Total Score: ${score}`);
               $("#totalAttempts").html(`Total Attempts: ${++attempts}`);
               localStorage.setItem("total_attempts", attempts);
-           }
 
-           console.log(score)
-           function isLessThan80(){
-              let isMore=true;
-              if(score < 80){
-                 isMore=false;
-                 console.log(score)
-              }
-              return
-           }
+            //validates test greater than 80
+            if(score < 80){
+               $("#totalScore").html(`Total Score: ${score}`);
+               $("#totalScore").attr("class", "text-danger");
+               $("#jumbo").html("KEEP STUDYING AND TRY AGAIN!!!");
+               $("#jumbo").attr("class","p-3 mb-2 bg-danger text-white")
+               
+            }else{
+               $("#totalScore").html(`Total Score: ${score}`);
+               $("#totalScore").attr("class","text-info");
+               $("#jumbo").html("CONGRATULATIONS YOU PASSED!!!");
+               $("#jumbo").attr("class", "p-3 mb-2 bg-success text-white");
+            }
+            return
+         }
+         
         });//ready
+        
       </script>
+     
 
         
     </head>
@@ -144,7 +148,7 @@ in html
     <!-- This is the body -->
     <!-- This is where we place the content of our website -->
     <body class="text-center">
-       <h1 class="jumbotron"> US Geography Quiz </h1>
+       <h1 id="jumbo" class="jumbotron"> US Geography Quiz </h1>
        
        <!--START of first question-->
         <h3><span id="markImg1"></span>What is the capital of California?</h3>
@@ -199,9 +203,9 @@ in html
         <h3 id="validationFdbk" class="bg-danger text-white"></h3>
         <button class="btn btn-outline-success">Submit Quiz</button>
         <br>
-        <h2 id="totalScore" class="text-info"></h2>
 
-
+        <h2 id="totalScore"></h2>
+        <br><br>
         <h3 id="totalAttempts"></h3>
         
         
