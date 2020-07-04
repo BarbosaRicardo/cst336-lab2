@@ -77,6 +77,7 @@ function gradeQuiz(){
    let q2Response = $("#q2").val();
    let q4Response = $("input[name=q4]:checked").val();
    let q6Response = $("#q6").val().toLowerCase();
+   let q8Response = $("input[name=q8]:checked").val();
 
    //question 1
    if (q1Response == "sacramento") {
