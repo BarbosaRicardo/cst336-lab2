@@ -47,17 +47,12 @@ function isFormValid(){
    return isValid;
 }
 function rightAnswer(index){
-   if(index < 6){
-      $(`#q${index}Feedback`).html("Correct!");
-      $(`#q${index}Feedback`).attr("class", "bg-success text-white");
-      $(`#markImg${index}`).html("<img src='img/checkmark.png'>");
-      score += 20;
-      }else{
-            $(`#q${index}Feedback`).html("Correct!");
-            $(`#q${index}Feedback`).attr("class", "bg-success text-white");
-            $(`#markImg${index}`).html("<img src='img/checkmark.png'>");
-            score += 12.50;
-      }
+   
+   $(`#q${index}Feedback`).html("Correct!");
+   $(`#q${index}Feedback`).attr("class", "bg-success text-white");
+   $(`#markImg${index}`).html("<img src='img/checkmark.png'>");
+   score += 12.5;
+     
    }
 
 function wrongAnswer(index){
