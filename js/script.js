@@ -33,7 +33,7 @@ function displayQ8Choices(){
 
    for (let i=0; i < q8ChoicesArray.length; i++){
       $("#q8Choices").append(` <input type="radio" name="q8" id="${q8ChoicesArray[i]}" 
-      vale="${q8ChoicesArray[i]}"> <label for="${q8ChoicesArray[i]}"> ${q8ChoicesArray[i]}</label>`);
+      value="${q8ChoicesArray[i]}"> <label for="${q8ChoicesArray[i]}"> ${q8ChoicesArray[i]}</label>`);
    }
 }//displayQ8Choices
 
