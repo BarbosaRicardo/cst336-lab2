@@ -128,6 +128,13 @@ function gradeQuiz(){
       }else{
          wrongAnswer(7)
       }
+
+   //question8
+   if(q8Response == "Alaska"){
+      rightAnswer(8)
+   }else{
+      wrongAnswer(8)
+   }
    
    $("#totalScore").html(`Total Score: ${score}`);
    $("#totalAttempts").html(`Total Attempts: ${++attempts}`);
